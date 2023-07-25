@@ -1,5 +1,12 @@
 import "./App.css";
 import iPhone from "./utils/iPhone.png";
+import Logo from "./utils/AuthPage/SYF Logo.png";
+import Clock from "./utils/AuthPage/Clock.png";
+import GreenX from "./utils/AuthPage/Green X.png";
+import RedX from "./utils/AuthPage/Red X.png";
+import PersonIcon from "./utils/AuthPage/Person Icon.png";
+import MapPin from "./utils/AuthPage/Map Pin.svg";
+
 import {
   List,
   ListItem,
@@ -24,6 +31,9 @@ function App() {
     "Amount",
   ];
 
+  const City = "Champaign";
+  const State = "IL";
+
   return (
     <div className="h-screen w-screen bg-[#34657F] flex flex-row">
       {/* iPhone content div */}
@@ -39,7 +49,37 @@ function App() {
         {/* iPhone white background */}
         <div className="bg-white h-[525px] w-[250px] rounded-[15%] z-0"></div>
         <div className="absolute">
-          <Card>This is a card</Card>
+          <Card className="!rounded-[15%]">
+            <div className="flex flex-col justify-center items-center w-[250px] h-[525px]">
+              <img className="w-1/3" alt="SYF Logo" src={Logo} />
+              <img className="w-3/5" alt="Person Icon" src={PersonIcon} />
+
+              <div className="flex flex-row">
+                <img className="w-[14px] my-2" alt="Map Pin" src={MapPin} />
+                <p className="text-sm">
+                  Near {City}, {State} <br />
+                  <span className="my-0 text-[10px] text-blue-500 font-semibold">
+                    {" "}
+                    More Info
+                  </span>
+                </p>
+              </div>
+              <img className="w-[14px] my-2" alt="Clock" src={Clock} />
+
+              <div className="flex flex-row w-full justify-evenly">
+                <div className="w-2/5 flex flex-col items-center">
+                  <img className="w-1/2" alt="Green Check" src={GreenX} />
+                  <p className="text-center font-sans text-xs">Yes, it's me</p>
+                </div>
+                <div className="w-2/5 flex flex-col items-center">
+                  <img className="w-1/2" alt="Red X" src={RedX} />
+                  <p className="text-center font-sans text-xs">
+                    No, it's not me
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
 
@@ -52,7 +92,7 @@ function App() {
             </h1>
           </Typography>
 
-          <List className="">
+          <List>
             {/* <p className="pl-4">Cardholder Name</p>
             <ListItem>
               <FormControl className="w-full">
