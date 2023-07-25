@@ -15,8 +15,14 @@ import {
 } from "@mui/material";
 
 function App() {
-  const names = ["Harsh", "Grant", "Madison", "Shubham", "Anthony"];
-  const fieldTitle = ["Cardholder Name", "Store", "Location", "Date", "Amount"];
+  // const names = ["Harsh", "Grant", "Madison", "Shubham", "Anthony"];
+  const fieldTitle = [
+    "Cardholder Name",
+    "Store",
+    "Latitude",
+    "Longitude",
+    "Amount",
+  ];
 
   return (
     <div className="h-screen w-screen bg-[#34657F] flex flex-row">
@@ -57,7 +63,7 @@ function App() {
             </ListItem> */}
             {fieldTitle.map((title) => (
               <div className="mb-8 h-[36px]">
-                <p className="pl-4">{title}</p>
+                <p className="pl-4 font-semibold font-sans">{title}</p>
                 <ListItem className="w-full !py-0">
                   <TextField size="small" className="w-full !py-0 h-[12px]" />
                 </ListItem>
