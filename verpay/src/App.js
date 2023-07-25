@@ -38,6 +38,9 @@ function App() {
 
         {/* iPhone white background */}
         <div className="bg-white h-[525px] w-[250px] rounded-[15%] z-0"></div>
+        <div className="absolute">
+          <Card>This is a card</Card>
+        </div>
       </div>
 
       <div className="w-[350px] flex flex-col items-center justify-center ml-[10%]">
