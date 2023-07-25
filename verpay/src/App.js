@@ -64,7 +64,7 @@ function App() {
               </div>
             ))}
           </List>
-          <Button className=" !bg-blue-300 border-sm pb-4">
+          <Button className=" !bg-blue-300 !rounded-lg pb-4">
             Initiate Payment
           </Button>
         </Card>
