@@ -25,9 +25,9 @@ function App() {
   // const names = ["Harsh", "Grant", "Madison", "Shubham", "Anthony"];
   const fieldTitle = [
     "Cardholder Name",
-    "Store",
-    "Latitude",
+    "Merchant",
     "Longitude",
+    "Latitude",
     "Amount",
   ];
 
@@ -50,13 +50,27 @@ function App() {
         <div className="bg-white h-[525px] w-[250px] rounded-[15%] z-0"></div>
         <div className="absolute">
           <Card className="!rounded-[15%]">
-            <div className="flex flex-col justify-center items-center w-[250px] h-[525px]">
-              <img className="w-1/3" alt="SYF Logo" src={Logo} />
-              <img className="w-3/5" alt="Person Icon" src={PersonIcon} />
+            <div className="flex flex-col justify-evenly items-center w-[250px] h-[525px]">
+              <img className="w-1/3 mt-6" alt="SYF Logo" src={Logo} />
+              <img className="w-3/5 -mt-8" alt="Person Icon" src={PersonIcon} />
+              <Typography className="font-sans text-center !text-md">
+                Did you just try to make a payment?
+              </Typography>
 
-              <div className="flex flex-row">
-                <img className="w-[14px] my-2" alt="Map Pin" src={MapPin} />
-                <p className="text-sm">
+              <div className="flex flex-row self-start ml-[15%] my-2 pb-4">
+                <img className="w-[14px] my-1" alt="Clock" src={Clock} />{" "}
+                <p className="text-[12px] ml-2 leading-none">
+                  Just now <br />
+                  <span className="my-0 text-[10px] text-blue-500 font-semibold">
+                    {" "}
+                    Today, July 26th at 8:42 AM
+                  </span>
+                </p>
+              </div>
+
+              <div className="flex flex-row self-start ml-[15%] -mt-[15%] pt-2">
+                <img className="w-[14px] my-1" alt="Map Pin" src={MapPin} />
+                <p className="text-[12px] ml-2 leading-none">
                   Near {City}, {State} <br />
                   <span className="my-0 text-[10px] text-blue-500 font-semibold">
                     {" "}
@@ -64,16 +78,19 @@ function App() {
                   </span>
                 </p>
               </div>
-              <img className="w-[14px] my-2" alt="Clock" src={Clock} />
 
-              <div className="flex flex-row w-full justify-evenly">
+              <div className="flex flex-row w-full justify-evenly mb-6">
                 <div className="w-2/5 flex flex-col items-center">
-                  <img className="w-1/2" alt="Green Check" src={GreenX} />
-                  <p className="text-center font-sans text-xs">Yes, it's me</p>
+                  <Button className="w-1/2">
+                    <img alt="Green Check" src={GreenX} />
+                  </Button>
+                  <p className="text-center font-sans text-sm">Yes, it's me</p>
                 </div>
                 <div className="w-2/5 flex flex-col items-center">
-                  <img className="w-1/2" alt="Red X" src={RedX} />
-                  <p className="text-center font-sans text-xs">
+                  <Button className="w-1/2">
+                    <img alt="Red X" src={RedX} />
+                  </Button>
+                  <p className="text-center font-sans text-sm">
                     No, it's not me
                   </p>
                 </div>
@@ -108,12 +125,12 @@ function App() {
               <div className="mb-8 h-[36px]">
                 <p className="pl-4 font-semibold font-sans">{title}</p>
                 <ListItem className="w-full !py-0">
-                  <TextField size="small" className="w-full !py-0 h-[12px]" />
+                  <TextField size="small" className="w-full h-[12px]" />
                 </ListItem>
               </div>
             ))}
           </List>
-          <Button className=" !bg-blue-300 !rounded-lg pb-4">
+          <Button className="!bg-sky-800 !rounded-md pb-4 !text-white !font-sans !font-bold !text-xl">
             Initiate Payment
           </Button>
         </Card>
